@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Criptografia</title>
+  </head>
+  <body>
+    <form action="#">
+      <h1>Criptografia</h1>
+      <input
+        type="text"
+        name="userInput"
+        id="userInput"
+        placeholder="Insira seu texto"
+      />
+      <label for="cryptType">Escolha sua Criptografia: </label>
+
+      <select name="crypt" id="cryptType">
+        <option value="cifraDeCesar">Cifra de Cesar</option>
+        <option value="base64">Base 64</option>
+      </select>
+
+      <div id="incrementDiv">
+        <label for="cryptSecret">
+          Insira uma chave para codificar/decodificar seu código (1 a 26):
+        </label>
+        <input type="text" index="cryptSecret" id="cesarKey" />
+      </div>
+
+      <div id="coderSelector">
+        <input type="radio" name="coder" id="encode" checked />
+        <label for="encode">Codificar</label>
+        <input type="radio" name="coder" id="decode" />
+        <label for="decode">Decodificar</label>
+      </div>
+      <input type="submit" value="" id="btnEncodeDecode" />
+
+      <label for="result">Resultado:</label>
+      <div id="result"></div>
+    </form>
+
+    <script src="./crypt.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
