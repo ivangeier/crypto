@@ -7,6 +7,7 @@ const encode = document.getElementById("encode");
 const btnEncodeDecode = document.getElementById("btnEncodeDecode");
 const result = document.getElementById("result");
 
+//When Cifra de Cesar is selected - show Increment Div. Hide when Base64 is selected
 cryptType.addEventListener("change", function () {
   if (cryptType.selectedIndex) {
     incrementDiv.style.display = "none";
@@ -15,10 +16,12 @@ cryptType.addEventListener("change", function () {
   }
 });
 
+//When Encode/Decode is selected, change Button Text (Code or Decode Message)
 coderSelector.addEventListener("click", function () {
   checkCodeDecode();
 });
 
+//When Button Encode/Decode is trigger - Call function to process text
 btnEncodeDecode.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -37,6 +40,7 @@ btnEncodeDecode.addEventListener("click", (e) => {
   }
 });
 
+//Check if Encode or Decode is selected and change button text.
 function checkCodeDecode() {
   if (encode.checked == true) {
     btnEncodeDecode.value = "Codificar mensagem";
@@ -45,10 +49,12 @@ function checkCodeDecode() {
   }
 }
 
+//Add result on screen
 function showResult(text) {
   result.innerHTML = text;
 }
 
+//Check if Cifra de Cesar key is between 1 and 26.
 function checkCifraKey(key) {
   if (key > 0 && key < 27) {
     return true;

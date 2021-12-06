@@ -2,11 +2,13 @@ function encodeCifra(text, key) {
   let encodedText = "";
   text = text.toLowerCase();
   for (let i = 0; i < text.length; i++) {
+    //if string is a letter (a-z) shift to new letter based on secret key
     if (/[a-z]/.test(text[i])) {
       let charChanged = (text.charCodeAt(i) - (96 - key)) % 26;
       charChanged = charChanged == 0 ? 26 : charChanged;
       encodedText += String.fromCharCode(charChanged + 96);
     } else {
+      //if is not a letter (a-z) add to the text
       encodedText += text[i];
     }
   }
